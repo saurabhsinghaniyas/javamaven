@@ -35,15 +35,15 @@ pipeline {
         stage('Docker Login'){
             
             steps {
-                 withCredentials([string(credentialsId: 'DockerId', variable: 'Dockerpwd')]) {
-                    sh "docker login -u anvbhaskar -p ${Dockerpwd}"
+                 withCredentials([string(credentialsId: 'saurabhs91621', variable: 'Dockerpwd')]) {
+                    sh "docker login -u saurabhs91621 -p ${Dockerpwd}"
                 }
             }                
         }
 
         stage('Docker Push'){
             steps {
-                sh 'docker push anvbhaskar/docker_jenkins_pipeline:${BUILD_NUMBER}'
+                sh 'docker push saurabhs91621/docker_jenkins_pipeline:${BUILD_NUMBER}'
             }
         }
         
